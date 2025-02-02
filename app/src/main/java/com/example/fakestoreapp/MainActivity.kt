@@ -34,6 +34,12 @@ class MainActivity : ComponentActivity() {
         }
     }
 
+    /**
+     * Composable function to manage app navigation.
+     * Sets up navigation routes for Home, All Products, and Product Details screens.
+     *
+     * @param innerPadding Padding values to be applied to the content.
+     */
     @Composable
     private fun FsApp(innerPadding: PaddingValues) {
         val navController = rememberNavController()
@@ -63,12 +69,5 @@ class MainActivity : ComponentActivity() {
                 )
             }
         }
-    }
-}
-
-@Preview(showBackground = true)
-@Composable
-fun GreetingPreview() {
-    FakeStoreAppTheme {
     }
 }

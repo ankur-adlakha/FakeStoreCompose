@@ -40,17 +40,6 @@ fun ProductDetails(navController: NavHostController, modifier: Modifier, product
 }
 
 @Composable
-fun LoadingUI() {
-    Box(modifier = Modifier.fillMaxSize()) {
-        CircularProgressIndicator(modifier = Modifier.align(Alignment.Center))
-    }
-}
-
-@Composable
-fun ErrorUI() {
-}
-
-@Composable
 fun ProductDetailsUI(product: Product, modifier: Modifier) {
     val scrollState = rememberScrollState()
     Box {

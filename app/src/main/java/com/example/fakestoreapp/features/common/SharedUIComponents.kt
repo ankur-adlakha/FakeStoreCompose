@@ -1,7 +1,6 @@
 package com.example.fakestoreapp.features.common
 
 import androidx.compose.foundation.clickable
-import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.automirrored.filled.ArrowBack
@@ -14,7 +13,6 @@ import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.material3.TopAppBarDefaults
 import androidx.compose.runtime.Composable
-import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
@@ -24,6 +22,12 @@ import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
 import com.example.fakestoreapp.utils.AppConstants
 
+/**
+ * Custom top app bar with a centered title and optional back navigation button.
+ *
+ * @param titleText The title to be displayed in the top app bar.
+ * @param navController The navigation controller for handling back navigation.
+ */
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun FSTopAppBar(titleText: String? = null, navController: NavController? = null) =
@@ -54,6 +58,9 @@ fun FSTopAppBar(titleText: String? = null, navController: NavController? = null)
         colors = TopAppBarDefaults.topAppBarColors(containerColor = MaterialTheme.colorScheme.primary)
     )
 
+/**
+ * Displays the product title with optional text alignment.
+ */
 @Composable
 fun ProductTitleText(text: String, modifier: Modifier, textAlign: TextAlign? = null) = Text(
     text = text,
@@ -63,6 +70,9 @@ fun ProductTitleText(text: String, modifier: Modifier, textAlign: TextAlign? = n
     textAlign = textAlign
 )
 
+/**
+ * Displays the product price with currency symbol and styling.
+ */
 @Composable
 fun ProductPriceText(price: String, modifier: Modifier, textAlign: TextAlign? = null) = Text(
     text = "${AppConstants.USER_CURRENCY}${price}",
@@ -72,6 +82,9 @@ fun ProductPriceText(price: String, modifier: Modifier, textAlign: TextAlign? = 
     textAlign = textAlign
 )
 
+/**
+ * Displays the product category with a smaller font size.
+ */
 @Composable
 fun ProductCategoryText(category: String, modifier: Modifier, textAlign: TextAlign? = null) = Text(
     text = category,
@@ -80,6 +93,9 @@ fun ProductCategoryText(category: String, modifier: Modifier, textAlign: TextAli
     textAlign = textAlign
 )
 
+/**
+ * Button to add a product to the cart.
+ */
 @Composable
 fun AddToCartButton(modifier: Modifier) =
     ElevatedButton(
